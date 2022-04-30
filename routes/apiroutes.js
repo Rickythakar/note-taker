@@ -6,12 +6,23 @@ const dbJSON = require('../db/db.json');
 
 //Require the path and router items needed
 const path = require('path');
+const { json } = require('express/lib/response');
 
-//Need to add the router.get functionality for each of the html pages
 // All routes are prefixed with /api - ref ln18 sever.js file
 router.get('/notes', (req,res) => {
+    readFromFile('./db/db.json').then((data)=> res.json(json.parse(data)));
     console.log('api/notes')
     res.json(dbJSON)
+});
+router.get('/notes:id', (req,res) => {
+    readFromFile('/db/db.json')
+    .then((data)=> json.parse(data))
+    .then((json)=> {
+        const result = json.filter((note) => note.id === req.params.id);
+        return result.lenght > 0
+            ? res.json(result)
+            : res.json ('note not found')
+    });
 });
 
 router.post('/notes', (req,res) => {
