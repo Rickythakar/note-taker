@@ -4,7 +4,8 @@
   "description": "An application that can allows the user to read, write, and save notes.",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "author": "Ricky Thakar",
   "license": "ISC",
@@ -12,5 +13,15 @@
     "express": "^4.16.4",
     "nodemon": "^2.0.16",
     "uuid": "^8.3.2"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rickythakar/note-taker.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/Rickythakar/note-taker/issues"
+  },
+  "homepage": "https://github.com/Rickythakar/note-taker#readme"
 }
