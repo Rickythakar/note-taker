@@ -2,7 +2,6 @@ const router = require('express').Router();
 const { v4: uuidv4 } = require('uuid');
 const { readFromFile, readAndAppend, writeToFile } = require('../helpers/fsUtils');
 
-
 // All routes are prefixed with /api - ref ln18 sever.js file
 router.get('/notes', (req,res) => {
     readFromFile('./db/db.json').then((data)=> res.json(JSON.parse(data)));
@@ -12,7 +11,7 @@ router.get('/notes:id', (req,res) => {
     .then((data)=> json.parse(data))
     .then((json)=> {
         const result = json.filter((note) => note.id === req.params.id);
-        return result.lenght > 0
+        return result.length > 0
             ? res.json(result)
             : res.json ('note not found')
     });
