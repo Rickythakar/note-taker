@@ -1,9 +1,8 @@
 //Dependencies 
 const express = require('express');
 //Required Routes
-const apiRoutes = require("./routes/apiRoutes");
-// const {use} = require('./routes/htmlRoutes');
-const htmlRoutes = require("./routes/htmlRoutes")
+const apiRoutes = require("./routes/apiroutes");
+const htmlRoutes = require("./routes/htmlRoutes");
 
 //Initialize the app and create a port
 const app = express();
