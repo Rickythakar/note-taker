@@ -1,7 +1,7 @@
 //Dependencies 
 const express = require('express');
 //Required Routes
-const apiRoutes = require("./routes/apiroutes");
+const apiRoutes = require("./routes/apiRoutes");
 const htmlRoutes = require("./routes/htmlRoutes");
 
 //Initialize the app and create a port
